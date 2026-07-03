@@ -1,5 +1,8 @@
+import java.util.*;
 
 public class Interpreter{
+
+    HashMap<String, String> variables = new HashMap<>();
 
     public void run(String code){
         
@@ -9,6 +12,8 @@ public class Interpreter{
         if (code.isEmpty()) {
             return;
         }
+
+       
 
         // Handle print command
         if (code.startsWith("Farmayen ")) {
@@ -40,9 +45,36 @@ public class Interpreter{
 
             System.out.println();
         }
+        else if(code.startsWith("Arry ")){
+
+            String[] parts=code.split(" ");
+            if(parts.length <4){
+                System.out.println("Invalid Arry command. Usage: Arry <variable_name> <value>");
+                return;
+            }
+            variables.put(parts[1], parts[3]);
+        }
+        else if(code.startsWith("& ")){
+
+            String[] parts=code.split(" ");
+
+            if(variables.containsKey(parts[1])){
+                System.out.println(variables.get(parts[1]));
+            } else {
+                System.out.println("Variable not found: " + code.substring(2));
+            }
+
+        }
+        else if(code.startsWith("# ")){
+            return;
+        }
         else if(code.equals("Chup")){
-            System.out.println("G Malkin as U say.");
+
+            System.out.println();
+            System.out.print("Chup ho gaya");
+            System.out.println(" Malkin as U said.");
             System.exit(0);
+        
         } 
         else {
 
