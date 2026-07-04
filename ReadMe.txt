@@ -35,6 +35,6 @@ Version 0.2.0:
 
 Version 1.0.3:
 
-    Add boolean
+    Add boolean but not functioning
     Add Logical and Arthematical operators
 

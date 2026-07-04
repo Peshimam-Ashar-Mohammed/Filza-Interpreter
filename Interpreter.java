@@ -76,6 +76,13 @@ public class Interpreter{
             System.exit(0);
         
         }
+         else if(code.startsWith("Btaen ")){
+
+            String part2[] = code.split(" ");
+
+            variables.put(part2[1],part2[3]);
+
+          }
         else if(code.contains("& ")){
 
           String[] parts=code.split(" ");
