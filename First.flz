@@ -20,10 +20,24 @@ Arry Dob = 13-11-2003
 Farmayenn Ki jan hai  
 & name2
 
+name1 = & name2
+
+& name1
+
 Farmayen \n
 Farmayenn on
 & Dob
 Farmayenn Chand was born.....
+
+# Assignment operator working
+
+# Arry temp1 = 57
+# Arry temp2 = 67
+# temp1 = & temp2
+# & temp2
+# & temp1
+
+
 
 Chup
 Farmayen sush

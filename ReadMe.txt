@@ -24,6 +24,15 @@ Version 0.2.0:
     printing syntax
      & name 
 
+     Version 0.2.1:
+
+        Added assignment operators for swapping ease
+        so if: 
+        Arry A = 57
+        Arry B = 67
+        A = & B
+        & B
+
 Version 1.0.3:
 
     Add boolean

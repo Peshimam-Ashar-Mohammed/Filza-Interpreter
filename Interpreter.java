@@ -75,7 +75,27 @@ public class Interpreter{
             System.out.println(" Malkin as U said.");
             System.exit(0);
         
-        } 
+        }
+        else if(code.contains("& ")){
+
+          String[] parts=code.split(" ");
+         
+        //   for(int i=0;i<parts.length;i++){
+        //     System.out.println(parts[i]);
+        //   }
+
+          if(variables.containsKey(parts[0])){
+            // System.out.println(variables.get(parts[0]));
+            String temp = variables.get(parts[3]);
+            variables.put(parts[0], temp);
+          }
+          else
+            System.out.println("Variable not found: " + code.substring(2));
+          
+
+
+        }
+       // else if(code.startsWith("Btaen "))
         else {
 
             System.out.println("Unknown command: " + code);
