@@ -74,4 +74,26 @@ Version 0.3.0:
                 Farmayenn Sum of A and B is
                 & c1
 
+            Version 0.3.2:
+
+                Added + operator wihtout declaration needed
+
+                    Systax:
+
+                    Arry a1 = 10.4
+                    & a1
+                    
+                    Arry b1 = 20.8
+                    & b1
+
+                    Arry c1 = 0
+
+                    c1 = a1 + b1
+
+                    Farmayenn Sum of A and B is 
+                    & c1
+
+
+
+
 

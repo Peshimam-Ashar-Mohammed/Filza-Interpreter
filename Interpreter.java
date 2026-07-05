@@ -174,6 +174,39 @@ public class Interpreter{
 
                 }
             }
+            else{
+
+                if(variables.containsKey(parts[2]) && variables.containsKey(parts[4])){
+
+                    if(variables.get(parts[2]).type.equals("Integer") && variables.get(parts[4]).type.equals("Integer") /*&& variables.get(parts[1]).type.equals("Integer")*/){
+                        
+                        int sum = Integer.parseInt(variables.get(parts[2]).value) + Integer.parseInt(variables.get(parts[4]).value);
+                        
+                        Value result = new Value();
+                        
+                        result.type = "Integer";
+                        result.value = String.valueOf(sum);
+
+                        variables.put(parts[0], result);
+
+                    }
+                    else if(variables.get(parts[2]).type.equals("Double") && variables.get(parts[4]).type.equals("Double")){
+
+                        double sum = Double.parseDouble(variables.get(parts[2]).value) + Double.parseDouble(variables.get(parts[4]).value);
+                        Value result = new Value();
+                        result.type = "Double";
+                        result.value = String.valueOf(sum);
+                        variables.put(parts[0], result);
+                        
+                    }
+                    else{
+                        System.out.println("Type mismatch: Cannot perform addition on non-integer values.");
+                    }
+                }    
+
+            
+                
+            }
 
         }
        // else if(code.startsWith("Btaen "))
