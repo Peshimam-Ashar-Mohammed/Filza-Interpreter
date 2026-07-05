@@ -43,15 +43,35 @@ Version 0.2.0:
                 Used Class Value with Type and Value Strings to keep track of This
                     Printing Value and type along with it atm for Debugging
 
-Version 1.0.3:
+Version 0.3.0:
 
     Add boolean but not functioning
 
-    keyword is Btaen sachi = true
+    keyword is Btaen suchi = true
                      jhoot = false
 
     Syntax:
-        Btaen variableName = sachi or jhoot
+        Btaen variableName = suchi or jhoot
 
     Add Logical and Arthematical operators
+
+        Version 0.3.1:
+
+            Added Addition for Interger and Doubles
+
+            As if right now new declaration varibales only work normally
+
+            Syntax:
+                
+                Arry a1 = 10.4
+                & a1
+            
+                Arry b1 = 20.8
+                & b1
+
+                Arry c1 = a + b
+
+                Farmayenn Sum of A and B is
+                & c1
+
 

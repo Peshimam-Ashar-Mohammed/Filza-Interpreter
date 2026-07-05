@@ -27,6 +27,9 @@ name1 = & name2
 
 & name1
 
+Arry pi = 3.1415
+& pi
+
 Farmayen \n
 Farmayenn on
 & Dob
@@ -40,11 +43,33 @@ Farmayenn Chand was born.....
 # & temp2
 # & temp1
 
-Btaen fax = sachi
+Btaen fax = suchi
 
 Farmayenn Ashar ko uski jan Filza se
 & fax
 Farmayenn Wala pyar hogya hai
+
+Farmayenn \n
+
+Arry a = 10
+& a
+Arry b = 20
+& b
+Arry c = a + b
+
+Farmayenn Sum of A and B is
+& c
+
+Farmayenn \n
+
+Arry a1 = 10.4
+& a1
+Arry b1 = 20.8
+& b1
+Arry c1 = a + b
+
+Farmayenn Sum of A and B is
+& c1
 
 
 Chup

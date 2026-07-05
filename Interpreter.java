@@ -45,7 +45,7 @@ public class Interpreter{
 
             System.out.println();
         }
-        else if(code.startsWith("Arry ")){
+        else if(code.startsWith("Arry ") && (code.contains(" + ")==false)){
 
             String[] parts=code.split(" ");
             if(parts.length <4){
@@ -58,8 +58,16 @@ public class Interpreter{
                 Integer.parseInt(parts[3]);
                 v.type = "Integer";
             } catch (Exception e) {
-                v.type = "String";
-            }
+                try {
+                    Double.parseDouble(parts[3]);
+                    v.type = "Double";
+                } catch (Exception e2) {
+                        if(parts[3].equals("suchi") || parts[3].equalsIgnoreCase("jhoot"))
+                            v.type = "Boolean";
+                        else
+                            v.type = "String";
+                }
+            } 
             v.value = parts[3];
             
             variables.put(parts[1], v);
@@ -102,6 +110,12 @@ public class Interpreter{
             Value v = new Value();
             v.type = "String";
             v.value = part2[3];
+
+            if(part2[3].equals("suchi") || part2[3].equalsIgnoreCase("jhoot"))
+                            v.type = "Boolean";
+                        else
+                            v.type = "String";
+
             variables.put(part2[1], v);
 
           }
@@ -122,6 +136,44 @@ public class Interpreter{
             System.out.println("Variable not found: " + code.substring(2));
           
 
+
+        }
+        else if(code.contains(" + ")){
+
+            String parts[]=code.split(" "); // 3,4
+
+            if(parts[0].equals("Arry")){
+                if(variables.containsKey(parts[3]) && variables.containsKey(parts[5])){
+
+                    if(variables.get(parts[3]).type.equals("Integer") && variables.get(parts[5]).type.equals("Integer") /*&& variables.get(parts[1]).type.equals("Integer")*/){
+                        
+                        int sum = Integer.parseInt(variables.get(parts[3]).value) + Integer.parseInt(variables.get(parts[5]).value);
+                        
+                        Value result = new Value();
+                        
+                        result.type = "Integer";
+                        result.value = String.valueOf(sum);
+
+                        variables.put(parts[1], result);
+
+                    }
+                    else if(variables.get(parts[3]).type.equals("Double") && variables.get(parts[5]).type.equals("Double")){
+
+                        double sum = Double.parseDouble(variables.get(parts[3]).value) + Double.parseDouble(variables.get(parts[5]).value);
+                        Value result = new Value();
+                        result.type = "Double";
+                        result.value = String.valueOf(sum);
+                        variables.put(parts[1], result);
+                        
+                    }
+                    else{
+                        System.out.println("Type mismatch: Cannot perform addition on non-integer values.");
+                    }
+                    
+
+
+                }
+            }
 
         }
        // else if(code.startsWith("Btaen "))
