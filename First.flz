@@ -124,8 +124,13 @@ Arry c5 = a5 % b5
 
 Farmayenn Remainder of A and B is
 & c5
+ 
+# pakka keyword
 
-
+pakka pie = 3.13
+Arry dum = 67
+pie = & dum
+& pie
 
 Chup
 Farmayen sush

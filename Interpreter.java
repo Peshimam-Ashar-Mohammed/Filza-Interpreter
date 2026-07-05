@@ -96,6 +96,11 @@ public class Interpreter{
             ExecuteModulo(code);
 
         }//modulo logic ends here
+        else if(code.startsWith("pakka ")){
+
+            createConstant(code);
+
+        }
         else {
 
                    // else if(code.startsWith("Btaen "))
@@ -181,7 +186,7 @@ public class Interpreter{
                 }
             } 
             v.value = parts[3];
-            
+            v.isConstant = false;
             variables.put(parts[1], v);
         
 
@@ -195,6 +200,9 @@ public class Interpreter{
                 System.out.println(variables.get(parts[1]).value +" Its of type "+variables.get(parts[1]).type);
                 
             }
+            // else if(variables.containsKey(parts[1]) && variables.get(parts[1]).isConstant==true){
+            //     System.out.println("Cannot lookup constant variable: " + parts[1]);
+            // }
             else {
                 System.out.println("Variable not found: " + code.substring(2));
             }
@@ -224,12 +232,22 @@ public class Interpreter{
         //   for(int i=0;i<parts.length;i++){
         //     System.out.println(parts[i]);
         //   }
+        
+        if (variables.get(parts[0]).isConstant) { 
 
-          if(variables.containsKey(parts[0])){
+            System.out.println("Cannot modify constant variable: " + parts[0]); 
+            return; 
+            
+        }
+
+          if(variables.containsKey(parts[0]) ){
             // System.out.println(variables.get(parts[0]));
             Value temp = variables.get(parts[3]);
             variables.put(parts[0], temp);
           }
+        //   else if(variables.containsKey(parts[0]) && variables.get(parts[3]).isConstant==true){
+        //     System.out.println("Cannot assign constant variable: " + parts[3]);
+        //   }
           else
             System.out.println("Variable not found: " + code.substring(2));
           
@@ -596,5 +614,18 @@ public class Interpreter{
             }
 
     }// Modulo ends here
+
+    public void createConstant(String code){
+
+        ExecuteVariableAssignment(code);
+
+        String[] parts=code.split(" ");
+        Value res = variables.get(parts[1]);
+        res.isConstant = true;
+
+        variables.put(parts[1], res);
+
+
+    }
 
 }

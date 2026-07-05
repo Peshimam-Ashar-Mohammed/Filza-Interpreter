@@ -174,3 +174,16 @@ Version 0.4.0:
     Refactored code to a more functional approach
     Makes the code more readable and easy to understand
 
+Version 0.5.0:
+    Added pakka keyword acts as final keyword or constant keyword
+
+    Syntax:
+        pakka variablename = value
+
+    Example code:
+
+        pakka pie = 3.13
+        Arry dum = 67
+        pie = & dum
+        & pie
+
