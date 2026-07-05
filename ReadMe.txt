@@ -112,7 +112,7 @@ Version 0.3.0:
                         & c2
 
                     Version 0.3.3:
-                        Added Multiplication no declaration required
+                        Added * operator no declaration required
 
                             Syntax:
 
@@ -131,7 +131,26 @@ Version 0.3.0:
                                 Farmayenn product of A and B is
                                 & c3
 
+                        Version 0.3.4:
+                            Added / opertaor no declaration required
 
+                            Syntax:
+
+                                
+                                # Division of shit
+
+                                Farmayenn \n
+
+                                Arry a4 = 18.0
+                                & a4
+
+                                Arry b4 = 7.0
+                                & b4
+
+                                Arry c4 = a4 / b4
+
+                                Farmayenn Division of A and B is
+                                & c4
 
 
 
