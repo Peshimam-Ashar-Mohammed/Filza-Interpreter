@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Interpreter{
 
-    HashMap<String, String> variables = new HashMap<>();
+    HashMap<String, Value> variables = new HashMap<>();
 
     public void run(String code){
         
@@ -52,14 +52,33 @@ public class Interpreter{
                 System.out.println("Invalid Arry command. Usage: Arry <variable_name> <value>");
                 return;
             }
-            variables.put(parts[1], parts[3]);
+
+            Value v = new Value();
+            try {
+                Integer.parseInt(parts[3]);
+                v.type = "Integer";
+            } catch (Exception e) {
+                v.type = "String";
+            }
+            v.value = parts[3];
+            
+            variables.put(parts[1], v);
+        
         }
         else if(code.startsWith("& ")){
 
             String[] parts=code.split(" ");
 
+            //  if(variables.containsKey(parts[1]) && variables.get(parts[1]).equals("sachi")){
+            //      System.out.println("true");
+                 
+            //  } else {
+            //      System.out.println("false");
+            //  }
+
             if(variables.containsKey(parts[1])){
-                System.out.println(variables.get(parts[1]));
+                System.out.println(variables.get(parts[1]).value +" Its of type "+variables.get(parts[1]).type);
+                
             } else {
                 System.out.println("Variable not found: " + code.substring(2));
             }
@@ -80,7 +99,10 @@ public class Interpreter{
 
             String part2[] = code.split(" ");
 
-            variables.put(part2[1],part2[3]);
+            Value v = new Value();
+            v.type = "String";
+            v.value = part2[3];
+            variables.put(part2[1], v);
 
           }
         else if(code.contains("& ")){
@@ -93,7 +115,7 @@ public class Interpreter{
 
           if(variables.containsKey(parts[0])){
             // System.out.println(variables.get(parts[0]));
-            String temp = variables.get(parts[3]);
+            Value temp = variables.get(parts[3]);
             variables.put(parts[0], temp);
           }
           else

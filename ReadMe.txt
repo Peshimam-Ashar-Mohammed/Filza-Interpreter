@@ -1,9 +1,12 @@
+This is made for my Jan She doesn't understand this Computers and programming shit Lol.
+Made using minimal AI and Diving balls deep into java as a mid programmer
+
 Version 0.1.0:
     
     Systax is in the First.flz File.
 
     Added keywords
-    Farmayen : Prints till end
+    Farmayen : Prints till end 
     Farmayenn : Prints with new line 
     \n new line character
     Chup : Exits console
@@ -28,13 +31,27 @@ Version 0.2.0:
 
         Added assignment operators for swapping ease
         so if: 
-        Arry A = 57
-        Arry B = 67
-        A = & B
-        & B
+        Arry A = 57         # Basically in programming 
+        Arry B = 67         #    int a = 10;
+        A = & B             #    int b = 20;
+        & B                 #    a = b;
+                            #    Print A
+
+        Version 0.2.2:
+
+            Added detection where it now detects if variable value is String or Interger
+                Used Class Value with Type and Value Strings to keep track of This
+                    Printing Value and type along with it atm for Debugging
 
 Version 1.0.3:
 
     Add boolean but not functioning
+
+    keyword is Btaen sachi = true
+                     jhoot = false
+
+    Syntax:
+        Btaen variableName = sachi or jhoot
+
     Add Logical and Arthematical operators
 
