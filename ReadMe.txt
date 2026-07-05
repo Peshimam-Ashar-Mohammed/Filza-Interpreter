@@ -93,6 +93,24 @@ Version 0.3.0:
                     Farmayenn Sum of A and B is 
                     & c1
 
+                Version 0.3.2:
+                    Added - operator can be used with and wihtout declaration
+
+                    Syntax Example:
+
+                        Farmayenn \n
+
+                        Arry a2 = 10.4
+                        & a2
+
+                        Arry b2 = 20.8
+                        & b2
+
+                        Arry c2 = a2 - b2
+
+                        Farmayenn differnce of A and B is
+                        & c2
+
 
 
 
