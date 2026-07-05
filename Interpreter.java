@@ -21,7 +21,119 @@ public class Interpreter{
             // String message = code.substring(6);
             // System.out.println(message);
 
-            for(int i=9; i<code.length(); i++){
+            ExecutePrint(code);
+
+           // System.out.println();
+
+        }
+        else if(code.startsWith("Farmayenn ")){
+            ExecutePrintln(code);
+        }// Handle variable assignment
+        else if(code.startsWith("Arry ") && (code.contains(" + ")==false) && 
+        (code.contains(" - ")==false) && 
+        (code.contains(" * ")==false) && 
+        (code.contains(" / ")==false) &&
+        (code.contains(" % ")==false)){
+
+            ExecuteVariableAssignment(code);
+            
+        }
+        else if(code.startsWith("& ")){
+
+            //  if(variables.containsKey(parts[1]) && variables.get(parts[1]).equals("sachi")){
+            //      System.out.println("true");
+                 
+            //  } else {
+            //      System.out.println("false");
+            //  }
+
+            ExecuteVariableLookup(code);
+
+        }
+        else if(code.startsWith("# ")){
+            return;
+        }
+        else if(code.equals("Chup")){
+
+            System.out.println();
+            System.out.print("Chup ho gaya");
+            System.out.println(" Malkin as U said.");
+            System.exit(0);
+        
+        }
+         else if(code.startsWith("Btaen ")){
+
+            ExecuteBooleanCheck(code);
+
+          }
+        else if(code.contains("& ")){
+
+          ExecuteVariableLookupMiddle(code);
+
+        }
+        else if(code.contains(" + ")){
+
+            ExecuteAddition(code);
+
+        } // Subtraction logic starts here
+        else if(code.contains(" - ")){
+
+                ExecuteSubtraction(code);
+            
+        }// Subtraction logic ends here
+        else if(code.contains(" * ")){ //Multiplication logic starts here
+
+                ExecuteMultiplication(code);
+
+        }// multiplication logic ends here
+        else if(code.contains(" / ")){ //Division logic starts here
+
+            ExecuteDivision(code);
+
+        }// Divison logic ends here
+        else if(code.contains(" % ")){ //Modulo logic starts here
+
+            ExecuteModulo(code);
+
+        }//modulo logic ends here
+        else {
+
+                   // else if(code.startsWith("Btaen "))
+
+            System.out.println("Unknown command: " + code);
+
+        }
+
+        //    System.out.println(message);
+        
+
+       // System.out.println("\nCode finished running :fire");
+
+    }
+
+
+
+
+
+
+
+
+// Functions for executing commands
+
+
+
+
+
+
+
+
+
+
+
+
+    public void ExecutePrint(String code){
+
+        for(int i=9; i<code.length(); i++){
                 if(code.charAt(i)=='\\' && i+1<code.length() && code.charAt(i+1)=='n'){
                     System.out.println();
                     i++;
@@ -30,11 +142,10 @@ public class Interpreter{
                 }
             }
 
-           // System.out.println();
+    }
 
-        }
-        else if(code.startsWith("Farmayenn ")){
-            for(int i=10; i<code.length(); i++){
+    public void ExecutePrintln(String code){
+        for(int i=10; i<code.length(); i++){
                 if(code.charAt(i)=='\\' && i+1<code.length() && code.charAt(i+1)=='n'){
                     System.out.println();
                     i++;
@@ -44,14 +155,11 @@ public class Interpreter{
             }
 
             System.out.println();
-        }// Handle variable assignment
-        else if(code.startsWith("Arry ") && (code.contains(" + ")==false) && 
-        (code.contains(" - ")==false) && 
-        (code.contains(" * ")==false) && 
-        (code.contains(" / ")==false) &&
-        (code.contains(" % ")==false)){
+    }
 
-            String[] parts=code.split(" ");
+    public void ExecuteVariableAssignment(String code){
+
+        String[] parts=code.split(" ");
             if(parts.length <4){
                 System.out.println("Invalid Arry command. Usage: Arry <variable_name> <value>");
                 return;
@@ -76,40 +184,25 @@ public class Interpreter{
             
             variables.put(parts[1], v);
         
-        }
-        else if(code.startsWith("& ")){
 
-            String[] parts=code.split(" ");
+    }
 
-            //  if(variables.containsKey(parts[1]) && variables.get(parts[1]).equals("sachi")){
-            //      System.out.println("true");
-                 
-            //  } else {
-            //      System.out.println("false");
-            //  }
+    public void ExecuteVariableLookup(String code){
 
+        String[] parts=code.split(" ");
+        
             if(variables.containsKey(parts[1])){
                 System.out.println(variables.get(parts[1]).value +" Its of type "+variables.get(parts[1]).type);
                 
-            } else {
+            }
+            else {
                 System.out.println("Variable not found: " + code.substring(2));
             }
+    }
 
-        }
-        else if(code.startsWith("# ")){
-            return;
-        }
-        else if(code.equals("Chup")){
+    public void ExecuteBooleanCheck(String code){
 
-            System.out.println();
-            System.out.print("Chup ho gaya");
-            System.out.println(" Malkin as U said.");
-            System.exit(0);
-        
-        }
-         else if(code.startsWith("Btaen ")){
-
-            String part2[] = code.split(" ");
+        String part2[] = code.split(" ");
 
             Value v = new Value();
             v.type = "String";
@@ -122,10 +215,11 @@ public class Interpreter{
 
             variables.put(part2[1], v);
 
-          }
-        else if(code.contains("& ")){
+    }
 
-          String[] parts=code.split(" ");
+    public void ExecuteVariableLookupMiddle(String code){
+
+        String[] parts=code.split(" ");
          
         //   for(int i=0;i<parts.length;i++){
         //     System.out.println(parts[i]);
@@ -140,11 +234,11 @@ public class Interpreter{
             System.out.println("Variable not found: " + code.substring(2));
           
 
+    }
 
-        }
-        else if(code.contains(" + ")){
+    public void ExecuteAddition(String code){
 
-            String parts[]=code.split(" "); // 3,4
+        String parts[]=code.split(" "); // 3,4
 
             if(parts[0].equals("Arry")){
                 if(variables.containsKey(parts[3]) && variables.containsKey(parts[5])){
@@ -212,10 +306,11 @@ public class Interpreter{
                 
             }
 
-        } // Subtraction logic starts here
-        else if(code.contains(" - ")){
+    }//Additon ends here
 
-            String parts[]=code.split(" "); // 3,4
+    public void ExecuteSubtraction(String code){
+
+        String parts[]=code.split(" "); // 3,4
 
             if(parts[0].equals("Arry")){
                 if(variables.containsKey(parts[3]) && variables.containsKey(parts[5])){
@@ -283,10 +378,12 @@ public class Interpreter{
                 
             }
 
-        }// Subtraction logic ends here
-        else if(code.contains(" * ")){ //Multiplication logic starts here
 
-            String parts[]=code.split(" "); // 3,4
+    }//Subtraction ends here
+
+    public void ExecuteMultiplication(String code){
+
+        String parts[]=code.split(" "); // 3,4
 
             if(parts[0].equals("Arry")){
                 if(variables.containsKey(parts[3]) && variables.containsKey(parts[5])){
@@ -353,10 +450,12 @@ public class Interpreter{
                 
             }
 
-        }// multiplication logic ends here
-        else if(code.contains(" / ")){ //Division logic starts here
 
-            String parts[]=code.split(" "); // 3,4
+    }//Multiplication ends here
+
+    public void ExecuteDivision(String code){
+
+        String parts[]=code.split(" "); // 3,4
 
             if(parts[0].equals("Arry")){
                 if(variables.containsKey(parts[3]) && variables.containsKey(parts[5])){
@@ -423,10 +522,13 @@ public class Interpreter{
                 
             }
 
-        }// Divison logic ends here
-        else if(code.contains(" % ")){ //Modulo logic starts here
 
-            String parts[]=code.split(" "); // 3,4
+    }//Division ends here
+
+
+    public void ExecuteModulo(String code){
+
+        String parts[]=code.split(" "); // 3,4
 
             if(parts[0].equals("Arry")){
                 if(variables.containsKey(parts[3]) && variables.containsKey(parts[5])){
@@ -493,20 +595,6 @@ public class Interpreter{
                 
             }
 
-        }//modulo logic ends here
-        else {
-
-                   // else if(code.startsWith("Btaen "))
-
-            System.out.println("Unknown command: " + code);
-
-        }
-
-        //    System.out.println(message);
-        
-
-       // System.out.println("\nCode finished running :fire");
-
-    }
+    }// Modulo ends here
 
 }

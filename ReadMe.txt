@@ -170,4 +170,7 @@ Version 0.3.0:
                                     & c5
 
 
+Version 0.4.0:
+    Refactored code to a more functional approach
+    Makes the code more readable and easy to understand
 
