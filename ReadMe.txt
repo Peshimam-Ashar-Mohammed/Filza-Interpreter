@@ -111,6 +111,26 @@ Version 0.3.0:
                         Farmayenn differnce of A and B is
                         & c2
 
+                    Version 0.3.3:
+                        Added Multiplication no declaration required
+
+                            Syntax:
+
+                                # Multiplication of shit
+
+                                Farmayenn \n
+
+                                Arry a3 = 17
+                                & a3
+
+                                Arry b3 = 7
+                                & b3
+
+                                Arry c3 = a3 * b3
+
+                                Farmayenn product of A and B is
+                                & c3
+
 
 
 

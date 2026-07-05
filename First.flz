@@ -86,6 +86,20 @@ Arry c2 = a2 - b2
 Farmayenn differnce of A and B is
 & c2
 
+# Multiplication of shit
+
+Farmayenn \n
+
+Arry a3 = 17
+& a3
+Arry b3 = 7
+& b3
+Arry c3 = a3 * b3
+
+Farmayenn product of A and B is
+& c3
+
+
 
 Chup
 Farmayen sush
