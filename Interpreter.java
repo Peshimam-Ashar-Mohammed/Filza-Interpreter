@@ -48,7 +48,8 @@ public class Interpreter{
         else if(code.startsWith("Arry ") && (code.contains(" + ")==false) && 
         (code.contains(" - ")==false) && 
         (code.contains(" * ")==false) && 
-        (code.contains(" / ")==false)){
+        (code.contains(" / ")==false) &&
+        (code.contains(" % ")==false)){
 
             String[] parts=code.split(" ");
             if(parts.length <4){
@@ -423,6 +424,76 @@ public class Interpreter{
             }
 
         }// Divison logic ends here
+        else if(code.contains(" % ")){ //Modulo logic starts here
+
+            String parts[]=code.split(" "); // 3,4
+
+            if(parts[0].equals("Arry")){
+                if(variables.containsKey(parts[3]) && variables.containsKey(parts[5])){
+
+                    if(variables.get(parts[3]).type.equals("Integer") && variables.get(parts[5]).type.equals("Integer") /*&& variables.get(parts[1]).type.equals("Integer")*/){
+                        
+                        int remainder = Integer.parseInt(variables.get(parts[3]).value) % Integer.parseInt(variables.get(parts[5]).value);
+                        
+                        Value result = new Value();
+                        
+                        result.type = "Integer";
+                        result.value = String.valueOf(remainder);
+
+                        variables.put(parts[1], result);
+
+                    }
+                    else if(variables.get(parts[3]).type.equals("Double") && variables.get(parts[5]).type.equals("Double")){
+
+                        double remainder = Double.parseDouble(variables.get(parts[3]).value) % Double.parseDouble(variables.get(parts[5]).value);
+                        Value result = new Value();
+                        result.type = "Double";
+                        result.value = String.valueOf(remainder);
+                        variables.put(parts[1], result);
+                        
+                    }
+                    else{
+                        System.out.println("Type mismatch: Cannot perform Modulo on non-integer values.");
+                    }
+                    
+
+
+                }
+            }
+            else{
+
+                if(variables.containsKey(parts[2]) && variables.containsKey(parts[4])){
+
+                    if(variables.get(parts[2]).type.equals("Integer") && variables.get(parts[4]).type.equals("Integer") /*&& variables.get(parts[1]).type.equals("Integer")*/){
+                        
+                        int remainder = Integer.parseInt(variables.get(parts[2]).value) % Integer.parseInt(variables.get(parts[4]).value);
+                        
+                        Value result = new Value();
+                        
+                        result.type = "Integer";
+                        result.value = String.valueOf(remainder);
+                        variables.put(parts[0], result);
+
+                    }
+                    else if(variables.get(parts[2]).type.equals("Double") && variables.get(parts[4]).type.equals("Double")){
+
+                        double remainder = Double.parseDouble(variables.get(parts[2]).value) % Double.parseDouble(variables.get(parts[4]).value);
+                        Value result = new Value();
+                        result.type = "Double";
+                        result.value = String.valueOf(remainder);
+                        variables.put(parts[0], result);
+                        
+                    }
+                    else{
+                        System.out.println("Type mismatch: Cannot perform Modulo on non-integer values.");
+                    }
+                }    
+
+            
+                
+            }
+
+        }//modulo logic ends here
         else {
 
                    // else if(code.startsWith("Btaen "))

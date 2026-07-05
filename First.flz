@@ -112,6 +112,19 @@ Arry c4 = a4 / b4
 Farmayenn Division of A and B is
 & c4
 
+# Remainder of shit
+
+Farmayenn \n
+
+Arry a5 = 19
+& a5
+Arry b5 = 9
+& b5
+Arry c5 = a5 % b5
+
+Farmayenn Remainder of A and B is
+& c5
+
 
 
 Chup

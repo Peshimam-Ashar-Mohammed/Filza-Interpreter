@@ -131,8 +131,7 @@ Version 0.3.0:
                                 Farmayenn product of A and B is
                                 & c3
 
-                        Version 0.3.4:
-                            Added / opertaor no declaration required
+                        Version 0.3.4: Added / opertaor no declaration required
 
                             Syntax:
 
@@ -151,6 +150,24 @@ Version 0.3.0:
 
                                 Farmayenn Division of A and B is
                                 & c4
+
+                            Version V0.3.5: Added % operator declaration not required
+
+                                Syntax:
+
+                                    # Remainder of shit
+
+                                    Farmayenn \n
+
+                                    Arry a5 = 19
+                                    & a5
+
+                                    Arry b5 = 9
+                                    & b5
+                                    Arry c5 = a5 % b5
+
+                                    Farmayenn Remainder of A and B is
+                                    & c5
 
 
 
