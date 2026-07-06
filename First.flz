@@ -177,6 +177,26 @@ c9 = a9 <= b9
 
 & c9
 
+# Equals to operator
+Farmayenn \n
+
+Arry a01 = 40
+Arry b01 = 40
+Arry c01 = 0.0
+c01 = a01 == b01
+
+& c01
+
+# Not Equals to operator
+Farmayenn \n
+
+Arry a02 = 41.2
+Arry b02 = 41.2
+Arry c02 = 0.0
+c02 = a02 != b02
+
+& c02
+
 
 
 Chup

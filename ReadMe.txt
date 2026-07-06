@@ -232,7 +232,20 @@ Version 0.6.0: Added comparision operator >
                 Farmayenn 45.1 >= 45.4 is               |       & c9
                 & c8                                    |                                                        Farmayenn \n
 
-                                                            
+            Version 0.6.2: Added both == and != 
+
+                Syntax:
+                    # Greater Than or equals to operator    |    # Less Than or equals to operator
+                    Farmayenn \n                            |       Arry a9 = 49.6
+                                                            |       Arry b9 = 45.4      
+                    Arry a8 = 46                            |
+                    Arry b8 = 45                            |       Arry c9 = 0.0
+                    Arry c8 = 0.0                           |       c9 = a9 != b9
+                    c8 = a8 == b8                           |
+                                                            |
+                    & c8                                    |       & c9
+                                 
+                                                                
                                                             
                                                             
                                                             
