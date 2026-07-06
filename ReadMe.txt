@@ -203,3 +203,18 @@ Version 0.6.0: Added comparision operator >
 
         Farmayenn 45.1 > 45.4 is
         & c6
+    
+    Version 0.6.1: Added comparision operator <
+
+        Syntax:
+            # Less Than operator
+            Farmayenn \n
+
+            Arry a7 = 5
+            Arry b7 = 45
+            Arry c7 = 0.0
+            c7 = a7 < b7
+
+            Farmayenn 45.1 > 45.4 is
+            & c7
+

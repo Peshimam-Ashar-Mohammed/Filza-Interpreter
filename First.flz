@@ -145,6 +145,17 @@ c6 = a6 > b6
 Farmayenn 45.1 > 45.4 is
 & c6
 
+# Less Than operator
+Farmayenn \n
+
+Arry a7 = 5
+Arry b7 = 45
+Arry c7 = 0.0
+c7 = a7 < b7
+
+Farmayenn 45.1 > 45.4 is
+& c7
+
 
 Chup
 Farmayen sush
