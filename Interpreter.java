@@ -33,7 +33,8 @@ public class Interpreter{
         (code.contains(" - ")==false) && 
         (code.contains(" * ")==false) && 
         (code.contains(" / ")==false) &&
-        (code.contains(" % ")==false)){
+        (code.contains(" % ")==false) &&
+        (code.contains(" > ")==false)){
 
             ExecuteVariableAssignment(code);
             
@@ -96,6 +97,11 @@ public class Interpreter{
             ExecuteModulo(code);
 
         }//modulo logic ends here
+        else if(code.contains(" > ")){
+
+            ExceuteGreaterThan(code);
+
+        }
         else if(code.startsWith("pakka ")){
 
             createConstant(code);
@@ -627,5 +633,82 @@ public class Interpreter{
 
 
     }
+
+    public void ExceuteGreaterThan(String code){
+
+        // System.out.println("Called this shit yes or no testing");
+
+        String parts[]= code.split(" ");
+
+        // for (String s : parts) {
+        //     System.out.println(s);
+        // }
+
+        if(variables.containsKey(parts[2]) && variables.containsKey(parts[4])){
+
+            if(variables.get(parts[2]).type.equals("Integer") && variables.get(parts[4]).type.equals("Integer")){
+
+                int num1=Integer.parseInt(variables.get(parts[2]).value);
+                int num2=Integer.parseInt(variables.get(parts[4]).value);
+
+                if(num1>num2){
+
+                    Value res = new Value();
+                    
+                    res.type = "Boolean";
+                    res.value = "suchi";
+                    res.isConstant = false;
+                    variables.put(parts[0], res);
+
+                } else {
+                    
+                    Value res = new Value();
+                    
+                    res.type = "Boolean";
+                    res.value = "jhoot";
+                    res.isConstant = false;
+                    variables.put(parts[0], res);
+
+                }
+
+
+            }
+            else if(variables.get(parts[2]).type.equals("Double") && variables.get(parts[4]).type.equals("Double")){
+
+                double num1=Double.parseDouble(variables.get(parts[2]).value);
+                double num2=Double.parseDouble(variables.get(parts[4]).value);
+
+                if(num1>num2){
+
+                    Value res = new Value();
+                    
+                    res.type = "Boolean";
+                    res.value = "suchi";
+                    res.isConstant = false;
+                    variables.put(parts[0], res);
+
+                } else {
+                    
+                    Value res = new Value();
+                    
+                    res.type = "Boolean";
+                    res.value = "jhoot";
+                    res.isConstant = false;
+                    variables.put(parts[0], res);
+
+                }
+
+            }
+        }
+        else {
+
+            // System.out.println("Both variables must be of type Integer or Double for comparison.");
+            System.out.println("Variables dont even exist lil bro or your syntax is wring check that shit womp womp");
+            
+        }
+
+
+    }
+
 
 }

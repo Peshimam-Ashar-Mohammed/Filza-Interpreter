@@ -127,10 +127,24 @@ Farmayenn Remainder of A and B is
  
 # pakka keyword
 
+Farmayenn \n
+
 pakka pie = 3.13
 Arry dum = 67
 pie = & dum
 & pie
+
+# Greater Than operator
+Farmayenn \n
+
+Arry a6 = 45.1
+Arry b6 = 45.4
+Arry c6 = 0.0
+c6 = a6 > b6
+
+Farmayenn 45.1 > 45.4 is
+& c6
+
 
 Chup
 Farmayen sush

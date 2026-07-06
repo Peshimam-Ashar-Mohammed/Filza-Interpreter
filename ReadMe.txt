@@ -1,5 +1,7 @@
 This is made for my Jan She doesn't understand this Computers and programming shit Lol.
+All keywords here are the things she says like Arry pakka suchi etc 
 Made using minimal AI and Diving balls deep into java as a mid programmer
+
 
 Version 0.1.0:
     
@@ -187,3 +189,17 @@ Version 0.5.0:
         pie = & dum
         & pie
 
+Version 0.6.0: Added comparision operator > 
+    Can only be implemented to an unused variable whihc has been declared beforehand thats the syntax deal wiht it
+
+    Syntax:
+        # Greater Than operator
+        Farmayenn \n
+
+        Arry a6 = 45.1
+        Arry b6 = 45.4
+        Arry c6 = 0.0
+        c6 = a6 > b6
+
+        Farmayenn 45.1 > 45.4 is
+        & c6
