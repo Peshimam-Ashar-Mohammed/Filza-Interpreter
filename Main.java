@@ -7,14 +7,23 @@ public class Main{
         String code = Files.readString(Path.of("First.flz"));
         
         Interpreter interpreter = new Interpreter();
+        String[] lines = code.split("\\R");
 
-        String[] lines = code.split("\n");
+        System.out.println("Calling run(String[])...");
+        interpreter.run(lines);
+        System.out.println("Returned from run(String[])...");
 
-        for(String line:lines){
-            interpreter.run(line);
-        }
+        // while(currentLine<lines.length){
+        //     String line = lines[currentLine];
+        //     interpreter.run(line, currentLine);
+        //     currentLine++;
+        // }
 
-        // interpreter.run(code);
+        // for(int i=0;i<lines.length;i++){
+        //     interpreter.run(lines[i]);
+        // }
+
+
 
 
     }

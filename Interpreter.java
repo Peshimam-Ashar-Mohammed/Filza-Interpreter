@@ -4,6 +4,179 @@ public class Interpreter{
 
     HashMap<String, Value> variables = new HashMap<>();
 
+    public void run(String[] lines){
+
+        int currentLine=0;
+
+        // System.out.println("[" + lines + "]");
+        while(currentLine<lines.length){
+
+            String line = lines[currentLine].trim();
+
+            if(line.startsWith("Agr ")){
+                
+                String condition = line.substring(4).trim();
+                System.out.println("Condition: " + condition);
+
+                boolean result = EvaluateCondition(condition);
+                int end = findBs(lines, currentLine + 1);
+
+                if(result){
+
+                    for(int i=currentLine+1;i<end;i++)
+                        run(lines[i]);
+
+                    currentLine = end;
+                }
+
+                // System.out.println("Agr command found at line: " + currentLine);
+                // int end = findBs(lines, currentLine + 1);
+                // System.out.println("Bs command found at line: " + end);
+
+            }
+            else
+                run(line);
+        
+        
+            currentLine++;
+        
+        
+        }
+
+    }
+
+    private int findBs(String[] lines,int startLine){
+
+        for(int i=startLine;i<lines.length;i++){
+
+            String line = lines[i].trim();
+
+            if(line.startsWith("Bs")){
+                return i;
+            }
+
+        }
+
+        return -1;
+
+    }
+
+    private boolean EvaluateCondition(String condition){
+
+        String parts[]=condition.split(" ");
+
+        // System.out.println(parts[0]+"\n"+parts[1]+"\n"+parts[2]);
+        
+        if(parts[1].equals(">")){
+            if(variables.containsKey(parts[0]) && variables.containsKey(parts[2])){
+
+                int num1=Integer.parseInt(variables.get(parts[0]).value);
+                int num2=Integer.parseInt(variables.get(parts[2]).value);
+
+                if(num1>num2){
+                    return true;
+                } else {
+                    return false;
+                }
+                
+            }
+        }
+        else if(parts[1].equals("<")){
+            if(variables.containsKey(parts[0]) && variables.containsKey(parts[2])){
+
+                int num1=Integer.parseInt(variables.get(parts[0]).value);
+                int num2=Integer.parseInt(variables.get(parts[2]).value);
+
+                if(num1<num2){
+                    return true;
+                } else {
+                    return false;
+                }
+                
+            }
+        }
+        else if(parts[1].equals("==")){
+            if(variables.containsKey(parts[0]) && variables.containsKey(parts[2])){
+
+                int num1=Integer.parseInt(variables.get(parts[0]).value);
+                int num2=Integer.parseInt(variables.get(parts[2]).value);
+
+                if(num1==num2){
+                    return true;
+                } else {
+                    return false;
+                }
+                
+            }
+        }
+        else if(parts[1].equals("!=")){
+            if(variables.containsKey(parts[0]) && variables.containsKey(parts[2])){
+
+                int num1=Integer.parseInt(variables.get(parts[0]).value);
+                int num2=Integer.parseInt(variables.get(parts[2]).value);
+
+                if(num1!=num2){
+                    return true;
+                } else {
+                    return false;
+                }
+                
+            }
+        }
+        else if(parts[1].equals(">=")){
+            if(variables.containsKey(parts[0]) && variables.containsKey(parts[2])){
+
+                int num1=Integer.parseInt(variables.get(parts[0]).value);
+                int num2=Integer.parseInt(variables.get(parts[2]).value);
+
+                if(num1>=num2){
+                    return true;
+                } else {
+                    return false;
+                }
+                
+            }
+        }
+        else if(parts[1].equals("<=")){
+            if(variables.containsKey(parts[0]) && variables.containsKey(parts[2])){
+
+                int num1=Integer.parseInt(variables.get(parts[0]).value);
+                int num2=Integer.parseInt(variables.get(parts[2]).value);
+
+                if(num1<=num2){
+                    return true;
+                } else {
+                    return false;
+                }
+                
+            }
+        }
+
+
+        return false;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public void run(String code){
         
         code = code.trim();
