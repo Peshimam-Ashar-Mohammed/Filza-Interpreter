@@ -26,9 +26,11 @@ public class Interpreter{
                     for(int i=currentLine+1;i<end;i++)
                         run(lines[i]);
 
-                    currentLine = end;
+                    
                 }
-
+                
+                currentLine = end;
+                
                 // System.out.println("Agr command found at line: " + currentLine);
                 // int end = findBs(lines, currentLine + 1);
                 // System.out.println("Bs command found at line: " + end);
@@ -68,7 +70,7 @@ public class Interpreter{
         // System.out.println(parts[0]+"\n"+parts[1]+"\n"+parts[2]);
         
         if(parts[1].equals(">")){
-            if(variables.containsKey(parts[0]) && variables.containsKey(parts[2])){
+            if(variables.containsKey(parts[0]) && variables.containsKey(parts[2]) && variables.get(parts[0]).type.equals("Integer") && variables.get(parts[2]).type.equals("Integer")){
 
                 int num1=Integer.parseInt(variables.get(parts[0]).value);
                 int num2=Integer.parseInt(variables.get(parts[2]).value);
@@ -80,9 +82,23 @@ public class Interpreter{
                 }
                 
             }
+            else if(variables.containsKey(parts[0]) && variables.containsKey(parts[2]) && variables.get(parts[0]).type.equals("Double") && variables.get(parts[2]).type.equals("Double")){
+
+                double num1=Double.parseDouble(variables.get(parts[0]).value);
+                double num2=Double.parseDouble(variables.get(parts[2]).value);
+
+                if(num1>num2){
+                    return true;
+                } else {
+                    return false;
+                }
+                
+            }
+            else
+                System.out.println("Both variables must be of type Integer or Double for comparison.");
         }
         else if(parts[1].equals("<")){
-            if(variables.containsKey(parts[0]) && variables.containsKey(parts[2])){
+            if(variables.containsKey(parts[0]) && variables.containsKey(parts[2]) && variables.get(parts[0]).type.equals("Integer") && variables.get(parts[2]).type.equals("Integer")){
 
                 int num1=Integer.parseInt(variables.get(parts[0]).value);
                 int num2=Integer.parseInt(variables.get(parts[2]).value);
@@ -94,9 +110,23 @@ public class Interpreter{
                 }
                 
             }
+            else if(variables.containsKey(parts[0]) && variables.containsKey(parts[2]) && variables.get(parts[0]).type.equals("Double") && variables.get(parts[2]).type.equals("Double")){
+
+                double num1=Double.parseDouble(variables.get(parts[0]).value);
+                double num2=Double.parseDouble(variables.get(parts[2]).value);
+
+                if(num1<num2){
+                    return true;
+                } else {
+                    return false;
+                }
+                
+            }
+            else
+                System.out.println("Both variables must be of type Integer or Double for comparison.");
         }
         else if(parts[1].equals("==")){
-            if(variables.containsKey(parts[0]) && variables.containsKey(parts[2])){
+            if(variables.containsKey(parts[0]) && variables.containsKey(parts[2]) && variables.get(parts[0]).type.equals("Integer") && variables.get(parts[2]).type.equals("Integer")){
 
                 int num1=Integer.parseInt(variables.get(parts[0]).value);
                 int num2=Integer.parseInt(variables.get(parts[2]).value);
@@ -108,9 +138,23 @@ public class Interpreter{
                 }
                 
             }
+            else if(variables.containsKey(parts[0]) && variables.containsKey(parts[2]) && variables.get(parts[0]).type.equals("Double") && variables.get(parts[2]).type.equals("Double")){
+
+                double num1=Double.parseDouble(variables.get(parts[0]).value);
+                double num2=Double.parseDouble(variables.get(parts[2]).value);
+
+                if(num1==num2){
+                    return true;
+                } else {
+                    return false;
+                }
+                
+            }
+            else
+                System.out.println("Both variables must be of type Integer or Double for comparison.");
         }
         else if(parts[1].equals("!=")){
-            if(variables.containsKey(parts[0]) && variables.containsKey(parts[2])){
+            if(variables.containsKey(parts[0]) && variables.containsKey(parts[2]) && variables.get(parts[0]).type.equals("Integer") && variables.get(parts[2]).type.equals("Integer")){
 
                 int num1=Integer.parseInt(variables.get(parts[0]).value);
                 int num2=Integer.parseInt(variables.get(parts[2]).value);
@@ -122,9 +166,23 @@ public class Interpreter{
                 }
                 
             }
+            else if(variables.containsKey(parts[0]) && variables.containsKey(parts[2]) && variables.get(parts[0]).type.equals("Double") && variables.get(parts[2]).type.equals("Double")){
+
+                double num1=Double.parseDouble(variables.get(parts[0]).value);
+                double num2=Double.parseDouble(variables.get(parts[2]).value);
+
+                if(num1!=num2){
+                    return true;
+                } else {
+                    return false;
+                }
+                
+            }
+            else 
+                System.out.println("Both variables must be of type Integer or Double for comparison.");
         }
         else if(parts[1].equals(">=")){
-            if(variables.containsKey(parts[0]) && variables.containsKey(parts[2])){
+            if(variables.containsKey(parts[0]) && variables.containsKey(parts[2]) && variables.get(parts[0]).type.equals("Integer") && variables.get(parts[2]).type.equals("Integer")   ){
 
                 int num1=Integer.parseInt(variables.get(parts[0]).value);
                 int num2=Integer.parseInt(variables.get(parts[2]).value);
@@ -136,9 +194,35 @@ public class Interpreter{
                 }
                 
             }
+            else if(variables.containsKey(parts[0]) && variables.containsKey(parts[2]) && variables.get(parts[0]).type.equals("Double") && variables.get(parts[2]).type.equals("Double")){
+
+                double num1=Double.parseDouble(variables.get(parts[0]).value);
+                double num2=Double.parseDouble(variables.get(parts[2]).value);
+
+                if(num1>=num2){
+                    return true;
+                } else {
+                    return false;
+                }
+                
+            }
+            else
+                System.out.println("Both variables must be of type Integer or Double for comparison.");
         }
         else if(parts[1].equals("<=")){
-            if(variables.containsKey(parts[0]) && variables.containsKey(parts[2])){
+            if(variables.containsKey(parts[0]) && variables.containsKey(parts[2]) && variables.get(parts[0]).type.equals("Double") && variables.get(parts[2]).type.equals("Double")){
+
+                double num1=Double.parseDouble(variables.get(parts[0]).value);
+                double num2=Double.parseDouble(variables.get(parts[2]).value);
+
+                if(num1<=num2){
+                    return true;
+                } else {
+                    return false;
+                }
+                
+            }
+            if(variables.containsKey(parts[0]) && variables.containsKey(parts[2]) && variables.get(parts[0]).type.equals("Integer") && variables.get(parts[2]).type.equals("Integer")){
 
                 int num1=Integer.parseInt(variables.get(parts[0]).value);
                 int num2=Integer.parseInt(variables.get(parts[2]).value);
@@ -148,8 +232,9 @@ public class Interpreter{
                 } else {
                     return false;
                 }
-                
             }
+            else
+                System.out.println("Both variables must be of type Integer or Double for comparison.");
         }
 
 
@@ -309,6 +394,9 @@ public class Interpreter{
 
             createConstant(code);
 
+        }
+        else if(code.startsWith("Bs ")){
+            return;
         }
         else {
 

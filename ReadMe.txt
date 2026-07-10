@@ -245,8 +245,19 @@ Version 0.6.0: Added comparision operator >
                                                             |
                     & c8                                    |       & c9
                                  
-                                                                
-                                                            
+Version 0.7.0: Implemented Agr (if) for ints with declaration required
+                its choppy and sloppy doesnt work all taht well  
+
+    Version 0.7.1: If block works now with double and int declaration required works well for now
+                Arry Filza1 = 69.5
+                Arry Ashar1 = 69.5
+
+                Agr Filza1 < Ashar1
+
+                Farmayenn This is Kabab me Haddi 
+
+                Bs           //Bs shows where the if condiiton or else condiiton ends                                               
+                                                                            
                                                             
                                                             
 
