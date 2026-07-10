@@ -247,6 +247,7 @@ Version 0.6.0: Added comparision operator >
                                  
 Version 0.7.0: Implemented Agr (if) for ints with declaration required
                 its choppy and sloppy doesnt work all taht well  
+                Bs keyword used to signify when the loop ends
 
     Version 0.7.1: If block works now with double and int declaration required works well for now
                 Arry Filza1 = 69.5
@@ -257,7 +258,23 @@ Version 0.7.0: Implemented Agr (if) for ints with declaration required
                 Farmayenn This is Kabab me Haddi 
 
                 Bs           //Bs shows where the if condiiton or else condiiton ends                                               
-                                                                            
+
+Version 0.8.0: Implemented loop JbTk and ends the block with Bs again
+
+                # Added loop testing
+
+                Farmayenn \n
+                Farmayenn Loop testing 5 times
+
+                Arry index = 5
+                Arry ek = 1
+
+                JbTk index
+                Farmayenn Hi
+                index = index - ek
+                Bs
+
+First.flz contains a Fib series code too                                                                                   
                                                             
                                                             
 

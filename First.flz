@@ -209,5 +209,69 @@ Farmayenn This is Kabab me Haddi
 Bs
 
 
+# Program to findout if age is > 18
+
+Farmayenn \n
+Farmayenn This is to see if you are old enough
+
+
+Arry mine = 16
+Arry minAge = 18
+
+Farmayenn Your age is 
+& mine
+
+
+Agr mine >= minAge
+Farmayenn You are old enough
+Bs
+
+Agr mine <= minAge
+Farmayenn You too young lil nigga
+Farmayenn Take permission from Mommy
+Bs
+
+
+# Added loop testing
+
+Farmayenn \n
+Farmayenn Loop testing 5 times
+
+Arry index = 5
+Arry ek = 1
+
+JbTk index
+Farmayenn Hi
+index = index - ek
+Bs
+
+# Fib series
+
+Farmayenn \n
+Farmayenn Trynig fib series
+
+Arry a11 = 0
+Arry bb = 1
+Arry sums = 0
+
+Arry index1 = 8
+Arry ek1 = 1
+
+& a11
+& bb
+
+JbTk index1
+
+sums = a11 + bb
+
+& sums
+
+a11 = & bb
+bb = & sums
+
+index1 = index1 - ek1
+Bs
+
+
 Chup
 Farmayen sush

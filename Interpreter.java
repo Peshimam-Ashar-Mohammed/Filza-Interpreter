@@ -16,7 +16,7 @@ public class Interpreter{
             if(line.startsWith("Agr ")){
                 
                 String condition = line.substring(4).trim();
-                System.out.println("Condition: " + condition);
+                // System.out.println("Condition: " + condition);
 
                 boolean result = EvaluateCondition(condition);
                 int end = findBs(lines, currentLine + 1);
@@ -36,6 +36,31 @@ public class Interpreter{
                 // System.out.println("Bs command found at line: " + end);
 
             }
+            else if(line.startsWith("JbTk ")){
+
+                String loopVariable= line.substring(5).trim();
+                int end = findBs(lines, currentLine + 1);
+
+                if(!variables.containsKey(loopVariable)){
+                    System.out.println("Variable not found: " + loopVariable);
+                    return;
+                }
+
+                while(Integer.parseInt(variables.get(loopVariable).value)>0){
+
+                    for(int i=currentLine+1;i<end;i++)
+                        run(lines[i]);
+
+                }
+
+                currentLine = end;
+
+            }
+            // else if(line.startsWith("Wrna ")){
+
+
+
+            // }
             else
                 run(line);
         
