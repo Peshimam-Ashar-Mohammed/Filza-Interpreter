@@ -274,8 +274,14 @@ Version 0.8.0: Implemented loop JbTk and ends the block with Bs again
                 index = index - ek
                 Bs
 
-First.flz contains a Fib series code too                                                                                   
-                                                            
+First.flz contains a Fib series code too
+
+Version 0.9.0: Added taking in user input 
+
+    Keyword Suny variablename
+
+        then Scanner will take input enter anything Int Double String boolean
+        Then implement it into diffrent logics and syntaxes as seen above                                                            
                                                             
 
                                                             

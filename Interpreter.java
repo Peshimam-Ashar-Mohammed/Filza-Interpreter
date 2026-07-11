@@ -288,6 +288,8 @@ public class Interpreter{
 
 
     public void run(String code){
+
+        Scanner sc = new Scanner(System.in);
         
         code = code.trim();
 
@@ -422,6 +424,40 @@ public class Interpreter{
         }
         else if(code.startsWith("Bs ")){
             return;
+        }
+        else if(code.startsWith("Suny ")){
+
+            String parts[]=code.split(" ");
+
+            if(variables.containsKey(parts[1]))
+                System.out.println("Variables already exists: " + parts[1]);
+            else{
+
+                String var = sc.next();
+                Value v = new Value();
+                v.value = var;
+                v.isConstant = false;
+                
+                try {
+                    Integer.parseInt(v.value);
+                    v.type = "Integer";
+                } catch (Exception e) {
+                try {
+                    Double.parseDouble(v.value);
+                    v.type = "Double";
+                } catch (Exception e2) {
+                        if(v.value.equals("suchi") || v.value.equalsIgnoreCase("jhoot"))
+                            v.type = "Boolean";
+                        else
+                            v.type = "String";
+                    }
+                } 
+
+                variables.put(parts[1],v);
+
+
+            }
+
         }
         else {
 

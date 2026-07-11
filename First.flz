@@ -272,6 +272,47 @@ bb = & sums
 index1 = index1 - ek1
 Bs
 
+# Taking input
+
+Farmayen \n
+
+Farmayenn Enter anything
+Suny var
+
+& var
+
+# Enter number to get fib series till then
+
+
+Farmayenn \n
+Farmayenn Enter a Digit till when u want the fib series
+
+Arry a12 = 0
+Arry bb2 = 1
+Arry sums1 = 0
+
+Suny incest
+Arry ek12 = 1
+Arry do2 = 2
+
+incest = incest - do2
+
+& a12
+& bb2
+
+JbTk incest
+
+sums1 = a12 + bb2
+
+& sums1
+
+a12 = & bb2
+bb2 = & sums1
+
+incest = incest - ek12
+Bs
+
+
 
 Chup
 Farmayen sush
