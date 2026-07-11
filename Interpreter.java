@@ -555,8 +555,8 @@ public class Interpreter{
         String[] parts=code.split(" ");
         
             if(variables.containsKey(parts[1])){
-                System.out.println(variables.get(parts[1]).value +" Its of type "+variables.get(parts[1]).type);
-                
+                // System.out.println(variables.get(parts[1]).value +" Its of type "+variables.get(parts[1]).type);
+                System.out.println(variables.get(parts[1]).value);
             }
             // else if(variables.containsKey(parts[1]) && variables.get(parts[1]).isConstant==true){
             //     System.out.println("Cannot lookup constant variable: " + parts[1]);

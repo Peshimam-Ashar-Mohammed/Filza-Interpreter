@@ -1,6 +1,10 @@
-This is made for my Jan She doesn't understand this Computers and programming shit Lol.
+This is made for my Jan She doesn't understand this Computers and programming shit Lol .
+InshaAllah we will end up together I'm building these to maybe get a good job abroad.
+Every keyword is taken from the vocabulary of someone special to me <3
+
 All keywords here are the things she says like Arry pakka suchi etc 
 Made using minimal AI and Diving balls deep into java as a mid programmer
+Built from scratch and added chatgpt version of readMe at the end if ya'll need it.
 
 
 Version 0.1.0:
@@ -285,4 +289,333 @@ Version 0.9.0: Added taking in user input
                                                             
 
                                                             
-                
+GPT READMEFILE
+=============================================================================================================
+
+
+## Features
+
+### Variables
+
+```filza
+Arry age = 19
+```
+
+Supports automatic type inference.
+
+Detected types:
+
+- Integer
+- Double
+- Boolean
+- String
+
+---
+
+### Constants
+
+```filza
+pakka PI = 3.14
+```
+
+Constant variables cannot be modified.
+
+---
+
+### Printing
+
+```filza
+Farmayen Hello
+Farmayenn Hello
+```
+
+Supports:
+
+```filza
+\n
+```
+
+for new lines.
+
+---
+
+### User Input
+
+```filza
+Suny age
+```
+
+Automatically detects the input type.
+
+Supported:
+
+- Integer
+- Double
+- Boolean
+- String
+
+---
+
+### Arithmetic Operators
+
+Supports
+
+```text
++
+-
+*
+/
+%
+```
+
+Example
+
+```filza
+Arry a = 10
+Arry b = 20
+Arry sum = 0
+
+sum = a + b
+```
+
+---
+
+### Comparison Operators
+
+Supported
+
+```text
+>
+<
+>=
+<=
+==
+!=
+```
+
+Example
+
+```filza
+Agr age >= eighteen
+
+Farmayenn Adult
+
+Bs
+```
+
+---
+
+### If Statements
+
+```filza
+Agr marks >= pass
+
+Farmayenn Passed
+
+Bs
+```
+
+---
+
+### Loops
+
+FilzaLang currently supports integer countdown loops.
+
+```filza
+Arry index = 5
+Arry one = 1
+
+JbTk index
+
+Farmayenn Hello
+
+index = index - one
+
+Bs
+```
+
+The loop continues while the controlling integer variable is greater than zero.
+
+---
+
+### Variable Lookup
+
+```filza
+& age
+```
+
+Displays the stored value and its runtime type.
+
+---
+
+### Comments
+
+```filza
+# This is a comment
+```
+
+---
+
+## Example Programs
+
+Included examples:
+
+- Hello World
+- Calculator
+- Fibonacci Series
+- Loop Demonstration
+- Conditional Execution
+- User Input
+- Variable Assignment
+- Arithmetic Operations
+
+---
+
+## Runtime Architecture
+
+FilzaLang stores every runtime value inside a symbol table.
+
+```java
+HashMap<String, Value> variables;
+```
+
+Runtime values are represented using:
+
+```java
+class Value {
+
+    String type;
+    String value;
+    boolean isConstant;
+
+}
+```
+
+Each variable stores:
+
+- Runtime type
+- Runtime value
+- Constant status
+
+---
+
+## Execution Model
+
+Unlike the initial implementation that interpreted one line at a time, FilzaLang now controls execution internally.
+
+```text
+Program
+
+↓
+
+Interpreter.run(lines)
+
+↓
+
+while(currentLine < lines.length)
+
+↓
+
+Execute Instructions
+```
+
+This architecture enables:
+
+- Conditional execution
+- Loops
+- Future language extensions
+
+---
+
+## Current Language Keywords
+
+| Keyword | Purpose |
+|----------|---------|
+| Arry | Variable declaration |
+| pakka | Constant declaration |
+| Farmayen | Print |
+| Farmayenn | Print with newline |
+| Suny | Read user input |
+| Agr | If statement |
+| JbTk | Loop |
+| Bs | End of block |
+| Btaen | Boolean declaration |
+| suchi | True |
+| jhoot | False |
+| Chup | Exit interpreter |
+
+---
+
+## Project Goals
+
+FilzaLang Classic focuses on understanding interpreter design while keeping the language intentionally simple.
+
+Goals:
+
+- Learn interpreter architecture
+- Learn runtime implementation
+- Learn execution flow
+- Understand language design
+- Build everything manually in Java
+
+No parser generators.
+
+No compiler frameworks.
+
+Everything is implemented from scratch.
+
+---
+
+## Future Plans
+
+FilzaLang Classic (Current)
+
+- Stable interpreted scripting language
+- Feature-focused architecture
+
+Future Project
+
+**FilzaLang Next**
+
+- Lexer
+- Tokenizer
+- Parser
+- Abstract Syntax Tree (AST)
+- Better error reporting
+- Function support
+- Nested blocks
+- Improved runtime
+
+---
+
+## Technologies Used
+
+- Java
+- HashMap
+- Object-Oriented Programming
+- Custom Runtime
+- Manual Interpreter Design
+
+---
+
+## Running
+
+Compile
+
+```bash
+javac Main.java
+```
+
+Run
+
+```bash
+java Main
+```
+
+---
+
+## Author
+Developed by **Ashar** as a compiler engineering learning project.
+
+FilzaLang exists because I wanted to make smt with java and also I just love my jan too much so dedicated my time to making this for her eventough she does'nt understand it lots.
+InshaAllah praying to Marry her <3 
